@@ -36,6 +36,7 @@ public class MessageReceivedThread implements Runnable
 
 	public void run()
 	{
+		System.out.println("msg recv start");
 		try
 		{
 			String cmdName = event.getMessage().getContent().split(" ")[0];
@@ -97,7 +98,7 @@ public class MessageReceivedThread implements Runnable
 							if (!blacklisted)
 							{
 								event.getChannel().setTypingStatus(true);
-								Thread.sleep(250);
+								Thread.sleep(10);
 
 								try
 								{
@@ -140,5 +141,6 @@ public class MessageReceivedThread implements Runnable
 		{
 			Logger.log.error("", e);
 		}
+		System.out.println("msg recv end");
 	}
 }

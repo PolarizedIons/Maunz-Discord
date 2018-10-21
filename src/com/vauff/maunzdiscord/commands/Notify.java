@@ -456,14 +456,14 @@ public class Notify extends AbstractCommand<MessageReceivedEvent>
 
 					confirmationMaps.remove(event.getUser().getStringID());
 					confirmationMessages.remove(event.getUser().getStringID());
-					Thread.sleep(2000);
+					Thread.sleep(10);
 				}
 
 				else if (event.getReaction().getEmoji().toString().equals("❌"))
 				{
 					confirmationMaps.remove(event.getUser().getStringID());
 					confirmationMessages.remove(event.getUser().getStringID());
-					Thread.sleep(2000);
+					Thread.sleep(10);
 				}
 
 				else if (event.getReaction().getEmoji().toString().equals("1⃣"))

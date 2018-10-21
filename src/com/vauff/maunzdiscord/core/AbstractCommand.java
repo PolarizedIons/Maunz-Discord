@@ -11,6 +11,7 @@ public abstract class AbstractCommand<M extends MessageReceivedEvent>
 	 * Holds all messages as keys which await a reaction or reply by a specific user.
 	 * The values hold an instance of {@link Await}
 	 */
+
 	public static final HashMap<String, Await> AWAITED = new HashMap<String, Await>();
 
 	/**

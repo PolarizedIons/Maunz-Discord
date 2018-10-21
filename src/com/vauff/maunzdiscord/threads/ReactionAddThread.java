@@ -32,6 +32,7 @@ public class ReactionAddThread implements Runnable
 
 	public void run()
 	{
+		System.out.println("RUNNING");
 		try
 		{
 			if (AbstractCommand.AWAITED.containsKey(event.getMessage().getStringID()) && event.getUser().getStringID().equals(AbstractCommand.AWAITED.get(event.getMessage().getStringID()).getID()))
@@ -96,5 +97,6 @@ public class ReactionAddThread implements Runnable
 			Util.msg(event.getChannel(), event.getAuthor(), ":exclamation:  |  **Uh oh, an error occured!**" + System.lineSeparator() + System.lineSeparator() + "If this was an unexpected error, please report it to Vauff in the #bugreports channel at http://discord.gg/MDx3sMz with the error code " + code);
 			Logger.log.error(code, e);
 		}
+		System.out.println("DONE");
 	}
 }

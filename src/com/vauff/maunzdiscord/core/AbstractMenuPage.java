@@ -113,8 +113,9 @@ public abstract class AbstractMenuPage
 		menu = Util.msg(trigger.getChannel(), trigger.getAuthor(), getTitle() + System.lineSeparator() + System.lineSeparator() + (getText(trigger.getChannel()) != null ? getText(trigger.getChannel()).replaceAll("\n", System.lineSeparator()) + System.lineSeparator() + System.lineSeparator() : "") + items);
 		Util.addNumberedReactions(menu, true, getAmount());
 
-		removeTimer = Executors.newScheduledThreadPool(0).schedule(() ->
+		removeTimer = Executors.newScheduledThreadPool(1).schedule(() ->
 		{
+			System.out.println("remove menu thread thing");
 			if (!menu.isDeleted())
 			{
 				AbstractCommand.AWAITED.remove(trigger.getAuthor().getStringID());
@@ -153,6 +154,7 @@ public abstract class AbstractMenuPage
 	 */
 	public final void onReacted(ReactionAddEvent event, int item) throws Exception
 	{
+		System.out.println("onreacted");
 		if (item < -1 || item > 8)
 		{
 			Logger.log.warn("Tried to add a child with index " + item + ". Index needs to be between including -1 and 8");

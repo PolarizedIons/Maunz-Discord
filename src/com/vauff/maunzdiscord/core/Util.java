@@ -390,7 +390,7 @@ public class Util
 		try
 		{
 			m.addReaction(EmojiManager.getForAlias(":" + reaction + ":"));
-			Thread.sleep(250);
+			Thread.sleep(10);
 		}
 		catch (MissingPermissionsException e)
 		{
@@ -419,7 +419,8 @@ public class Util
 			for (String reaction : reactions)
 			{
 				m.addReaction(EmojiManager.getForAlias(":" + reaction + ":"));
-				Thread.sleep(250);
+				System.out.println("adding " + reaction + " to " + m.getStringID());
+				Thread.sleep(10);
 			}
 		}
 		catch (MissingPermissionsException e)
@@ -461,7 +462,7 @@ public class Util
 		for (int j = 0; j < i; j++)
 		{
 			finalReactions.add(reactions[j]);
-			Thread.sleep(250);
+			Thread.sleep(10);
 		}
 
 		if (cancellable)
@@ -566,15 +567,15 @@ public class Util
 				if (pageNumber != 1)
 				{
 					m.addReaction(EmojiManager.getForAlias(":arrow_backward:"));
-					Thread.sleep(250);
+					Thread.sleep(10);
 				}
 
-				Thread.sleep(250);
+				Thread.sleep(10);
 
 				if (pageNumber != (int) Math.ceil((float) entries.size() / (float) pageSize))
 				{
 					m.addReaction(EmojiManager.getForAlias(":arrow_forward:"));
-					Thread.sleep(250);
+					Thread.sleep(10);
 				}
 			}
 			catch (Exception e)

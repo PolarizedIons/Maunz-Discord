@@ -151,7 +151,7 @@ public class ServerTimerThread implements Runnable
 								}
 								else
 								{
-									Thread.sleep(1000);
+									Thread.sleep(10);
 								}
 							}
 						}

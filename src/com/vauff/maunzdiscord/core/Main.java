@@ -20,6 +20,7 @@ public class Main
 		try
 		{
 			File file = new File(Util.getJarLocation() + "config.json");
+            System.out.println(file);
 			File logFile = new File("maunz.log");
 			File oldLogFile = new File("maunz-old.log");
 			JSONObject json;
@@ -42,7 +43,7 @@ public class Main
 				FileUtils.writeStringToFile(file, json.toString(2), "UTF-8");
 			}
 
-			Thread.sleep(2000);
+			Thread.sleep(10);
 			oldLogFile.delete();
 			logFile.renameTo(oldLogFile);
 			Logger.log = LogManager.getLogger(Main.class);
